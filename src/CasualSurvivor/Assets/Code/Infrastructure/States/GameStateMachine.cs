@@ -14,7 +14,8 @@ namespace Code.Infrastructure.States
       _states = new Dictionary<Type, IState>
       {
         [typeof(BootstrapState)] = factory.Create<BootstrapState>(this),
-        [typeof(LoadLevelState)] = factory.Create<LoadLevelState>(),
+        [typeof(LoadLevelState)] = factory.Create<LoadLevelState>(this),
+        [typeof(GameLoopState)] = factory.Create<GameLoopState>(),
       };
     }
 
