@@ -13,7 +13,7 @@ namespace Code.Infrastructure.States
     {
       _states = new Dictionary<Type, IState>
       {
-        [typeof(BootstrapState)] = factory.Create<BootstrapState>(),
+        [typeof(BootstrapState)] = factory.Create<BootstrapState>(this),
         [typeof(LoadLevelState)] = factory.Create<LoadLevelState>(),
       };
     }
