@@ -2,6 +2,8 @@
 using Code.Infrastructure.Services;
 using Code.Infrastructure.States;
 using Code.Infrastructure.States.Factory;
+using Code.Infrastructure.Systems;
+using Code.Infrastructure.View.Factory;
 using Zenject;
 
 namespace Code.Infrastructure.Installers
@@ -21,11 +23,13 @@ namespace Code.Infrastructure.Installers
 
     private void BindInfrastructureServices()
     {
-      
       Container.Bind<ISceneLoader>().To<SceneLoader>().AsSingle();
-      
+
       Container.Bind<IStateFactory>().To<StateFactory>().AsSingle();
       Container.Bind<IGameStateMachine>().To<GameStateMachine>().AsSingle();
+      
+      Container.Bind<ISystemFactory>().To<SystemFactory>().AsSingle();
+      Container.Bind<IEntityViewFactory>().To<EntityViewFactory>().AsSingle();
     }
 
     private void BindInstaller() =>

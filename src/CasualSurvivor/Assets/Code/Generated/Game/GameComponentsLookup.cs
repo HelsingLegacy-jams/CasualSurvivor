@@ -8,15 +8,27 @@
 //------------------------------------------------------------------------------
 public static class GameComponentsLookup {
 
-    public const int View = 0;
+    public const int Id = 0;
+    public const int View = 1;
+    public const int ViewPath = 2;
+    public const int ViewPrefab = 3;
+    public const int WorldPosition = 4;
 
-    public const int TotalComponents = 1;
+    public const int TotalComponents = 5;
 
     public static readonly string[] componentNames = {
-        "View"
+        "Id",
+        "View",
+        "ViewPath",
+        "ViewPrefab",
+        "WorldPosition"
     };
 
     public static readonly System.Type[] componentTypes = {
-        typeof(Code.Common.View)
+        typeof(Code.Common.Id),
+        typeof(Code.Common.View),
+        typeof(Code.Common.ViewPath),
+        typeof(Code.Common.ViewPrefab),
+        typeof(Code.Gameplay.Common.WorldPosition)
     };
 }
