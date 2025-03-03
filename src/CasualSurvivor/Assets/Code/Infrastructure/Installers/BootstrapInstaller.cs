@@ -1,4 +1,5 @@
-﻿using Code.Infrastructure.Scenes;
+﻿using Code.Infrastructure.AssetManagement;
+using Code.Infrastructure.Scenes;
 using Code.Infrastructure.Services;
 using Code.Infrastructure.States;
 using Code.Infrastructure.States.Factory;
@@ -19,10 +20,19 @@ namespace Code.Infrastructure.Installers
     {
       BindInstaller();
       BindInfrastructureServices();
+      BindContexts();
+    }
+
+    private void BindContexts()
+    {
+      Container.Bind<Contexts>().FromInstance(Contexts.sharedInstance).AsSingle();
+      
+      Container.Bind<GameContext>().FromInstance(Contexts.sharedInstance.game).AsSingle();
     }
 
     private void BindInfrastructureServices()
     {
+      Container.Bind<IAssetProvider>().To<AssetProvider>().AsSingle();
       Container.Bind<ISceneLoader>().To<SceneLoader>().AsSingle();
 
       Container.Bind<IStateFactory>().To<StateFactory>().AsSingle();
