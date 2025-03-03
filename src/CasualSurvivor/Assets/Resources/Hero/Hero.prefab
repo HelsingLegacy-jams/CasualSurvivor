@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 917147776753054525}
   - component: {fileID: 7367381892329701842}
   - component: {fileID: 5857887563716089738}
+  - component: {fileID: -8607400367450275281}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: Hero
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -112,3 +113,15 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &-8607400367450275281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7584895993585533344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b810dc3ecebb49c6983106ffae8599e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

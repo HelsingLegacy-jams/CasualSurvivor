@@ -1,4 +1,5 @@
-﻿using Code.Infrastructure.AssetManagement;
+﻿using Code.Gameplay.Hero.Factory;
+using Code.Infrastructure.AssetManagement;
 using Code.Infrastructure.Scenes;
 using Code.Infrastructure.Services;
 using Code.Infrastructure.States;
@@ -21,6 +22,12 @@ namespace Code.Infrastructure.Installers
       BindInstaller();
       BindInfrastructureServices();
       BindContexts();
+      BindGameplayFactories();
+    }
+
+    private void BindGameplayFactories()
+    {
+      Container.Bind<IHeroFactory>().To<HeroFactory>().AsSingle();
     }
 
     private void BindContexts()

@@ -13,15 +13,17 @@ public static class GameComponentsLookup {
     public const int ViewPath = 2;
     public const int ViewPrefab = 3;
     public const int WorldPosition = 4;
+    public const int Hero = 5;
 
-    public const int TotalComponents = 5;
+    public const int TotalComponents = 6;
 
     public static readonly string[] componentNames = {
         "Id",
         "View",
         "ViewPath",
         "ViewPrefab",
-        "WorldPosition"
+        "WorldPosition",
+        "Hero"
     };
 
     public static readonly System.Type[] componentTypes = {
@@ -29,6 +31,7 @@ public static class GameComponentsLookup {
         typeof(Code.Common.View),
         typeof(Code.Common.ViewPath),
         typeof(Code.Common.ViewPrefab),
-        typeof(Code.Gameplay.Common.WorldPosition)
+        typeof(Code.Gameplay.Common.WorldPosition),
+        typeof(Code.Gameplay.Hero.Hero)
     };
 }
