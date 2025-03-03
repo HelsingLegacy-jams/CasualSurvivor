@@ -1,4 +1,5 @@
-﻿using Code.Gameplay.Hero.Factory;
+﻿using Code.Gameplay.Features.Hero.Factory;
+using Code.Gameplay.Features.Input.Factory;
 using Code.Infrastructure.AssetManagement;
 using Code.Infrastructure.Scenes;
 using Code.Infrastructure.Services;
@@ -28,6 +29,7 @@ namespace Code.Infrastructure.Installers
     private void BindGameplayFactories()
     {
       Container.Bind<IHeroFactory>().To<HeroFactory>().AsSingle();
+      Container.Bind<IInputFactory>().To<InputFactory>().AsSingle();
     }
 
     private void BindContexts()

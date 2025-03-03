@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherHero;
+    static Entitas.IMatcher<GameEntity> _matcherInteracted;
 
-    public static Entitas.IMatcher<GameEntity> Hero {
+    public static Entitas.IMatcher<GameEntity> Interacted {
         get {
-            if (_matcherHero == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.Hero);
+            if (_matcherInteracted == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.Interacted);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherHero = matcher;
+                _matcherInteracted = matcher;
             }
 
-            return _matcherHero;
+            return _matcherInteracted;
         }
     }
 }
@@ -33,18 +33,18 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Hero.Hero heroComponent = new Code.Gameplay.Features.Hero.Hero();
+    static readonly Code.Gameplay.Features.Input.Interacted interactedComponent = new Code.Gameplay.Features.Input.Interacted();
 
-    public bool isHero {
-        get { return HasComponent(GameComponentsLookup.Hero); }
+    public bool isInteracted {
+        get { return HasComponent(GameComponentsLookup.Interacted); }
         set {
-            if (value != isHero) {
-                var index = GameComponentsLookup.Hero;
+            if (value != isInteracted) {
+                var index = GameComponentsLookup.Interacted;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : heroComponent;
+                            : interactedComponent;
 
                     AddComponent(index, component);
                 } else {

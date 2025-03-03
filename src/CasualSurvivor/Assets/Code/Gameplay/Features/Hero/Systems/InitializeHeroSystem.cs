@@ -1,7 +1,7 @@
-﻿using Code.Gameplay.Hero.Factory;
+﻿using Code.Gameplay.Features.Hero.Factory;
 using Entitas;
 
-namespace Code.Gameplay.Hero.Systems
+namespace Code.Gameplay.Features.Hero.Systems
 {
   public class InitializeHeroSystem : IInitializeSystem
   {

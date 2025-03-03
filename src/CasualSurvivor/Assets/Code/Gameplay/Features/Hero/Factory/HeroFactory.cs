@@ -2,7 +2,7 @@
 using Code.Common.Extensions;
 using UnityEngine;
 
-namespace Code.Gameplay.Hero.Factory
+namespace Code.Gameplay.Features.Hero.Factory
 {
   public class HeroFactory : IHeroFactory
   {

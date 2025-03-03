@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherHero;
+    static Entitas.IMatcher<GameEntity> _matcherInput;
 
-    public static Entitas.IMatcher<GameEntity> Hero {
+    public static Entitas.IMatcher<GameEntity> Input {
         get {
-            if (_matcherHero == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.Hero);
+            if (_matcherInput == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.Input);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherHero = matcher;
+                _matcherInput = matcher;
             }
 
-            return _matcherHero;
+            return _matcherInput;
         }
     }
 }
@@ -33,18 +33,18 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Hero.Hero heroComponent = new Code.Gameplay.Features.Hero.Hero();
+    static readonly Code.Gameplay.Features.Input.Input inputComponent = new Code.Gameplay.Features.Input.Input();
 
-    public bool isHero {
-        get { return HasComponent(GameComponentsLookup.Hero); }
+    public bool isInput {
+        get { return HasComponent(GameComponentsLookup.Input); }
         set {
-            if (value != isHero) {
-                var index = GameComponentsLookup.Hero;
+            if (value != isInput) {
+                var index = GameComponentsLookup.Input;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : heroComponent;
+                            : inputComponent;
 
                     AddComponent(index, component);
                 } else {

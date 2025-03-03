@@ -1,7 +1,7 @@
-﻿using Code.Gameplay.Hero.Systems;
+﻿using Code.Gameplay.Features.Hero.Systems;
 using Code.Infrastructure.Systems;
 
-namespace Code.Gameplay.Hero
+namespace Code.Gameplay.Features.Hero
 {
   public sealed class HeroFeature : Feature
   {
