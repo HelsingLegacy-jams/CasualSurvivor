@@ -8,6 +8,7 @@ namespace Code.Infrastructure.View
     public BindViewFeature(ISystemFactory systems)
     {
       Add(systems.Create<BindViewFromPathSystem>());
+      Add(systems.Create<BindViewFromPrefabSystem>());
     }
   }
 }
