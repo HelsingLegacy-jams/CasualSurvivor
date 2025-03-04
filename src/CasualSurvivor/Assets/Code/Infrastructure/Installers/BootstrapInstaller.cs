@@ -3,6 +3,7 @@ using Code.Gameplay.Common.Physics;
 using Code.Gameplay.Common.Time;
 using Code.Gameplay.Features.Hero.Factory;
 using Code.Gameplay.Features.Input.Factory;
+using Code.Gameplay.Features.Input.Service;
 using Code.Infrastructure.AssetManagement;
 using Code.Infrastructure.Scenes;
 using Code.Infrastructure.Services;
@@ -41,6 +42,7 @@ namespace Code.Infrastructure.Installers
     {
       Container.Bind<IHeroFactory>().To<HeroFactory>().AsSingle();
       Container.Bind<IInputFactory>().To<InputFactory>().AsSingle();
+      Container.Bind<IInputService>().To<InputService>().AsSingle();
     }
 
     private void BindContexts()

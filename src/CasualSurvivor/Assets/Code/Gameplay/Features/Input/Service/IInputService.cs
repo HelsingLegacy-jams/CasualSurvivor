@@ -3,5 +3,6 @@
   public interface IInputService
   {
     GameEntity Entity { get; }
+    void SetEntity(GameEntity entity);
   }
 }
