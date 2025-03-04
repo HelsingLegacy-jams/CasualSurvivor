@@ -17,8 +17,9 @@ public static class GameComponentsLookup {
     public const int CursorPosition = 6;
     public const int Input = 7;
     public const int Interacted = 8;
+    public const int MovingProvided = 9;
 
-    public const int TotalComponents = 9;
+    public const int TotalComponents = 10;
 
     public static readonly string[] componentNames = {
         "Id",
@@ -29,7 +30,8 @@ public static class GameComponentsLookup {
         "Hero",
         "CursorPosition",
         "Input",
-        "Interacted"
+        "Interacted",
+        "MovingProvided"
     };
 
     public static readonly System.Type[] componentTypes = {
@@ -41,6 +43,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Hero.Hero),
         typeof(Code.Gameplay.Features.Input.CursorPosition),
         typeof(Code.Gameplay.Features.Input.Input),
-        typeof(Code.Gameplay.Features.Input.Interacted)
+        typeof(Code.Gameplay.Features.Input.Interacted),
+        typeof(Code.Gameplay.Features.Input.MovingProvided)
     };
 }

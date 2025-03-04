@@ -1,4 +1,5 @@
-﻿using Code.Gameplay.Features.Hero.Factory;
+﻿using Code.Gameplay.Common.Collisions;
+using Code.Gameplay.Features.Hero.Factory;
 using Code.Gameplay.Features.Input.Factory;
 using Code.Infrastructure.AssetManagement;
 using Code.Infrastructure.Scenes;
@@ -24,6 +25,12 @@ namespace Code.Infrastructure.Installers
       BindInfrastructureServices();
       BindContexts();
       BindGameplayFactories();
+      BindGameplayServices();
+    }
+
+    private void BindGameplayServices()
+    {
+      Container.Bind<ICollisionRegistry>().To<CollisionRegistry>().AsSingle();
     }
 
     private void BindGameplayFactories()
