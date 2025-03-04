@@ -7,14 +7,10 @@ namespace Code.Gameplay.Features.Input.Systems
   {
     private readonly IInputFactory _factory;
 
-    public InitializeInputSystem(IInputFactory factory)
-    {
+    public InitializeInputSystem(IInputFactory factory) => 
       _factory = factory;
-    }
 
-    public void Initialize()
-    {
+    public void Initialize() =>
       _factory.CreateInput();
-    }
   }
 }

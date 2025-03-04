@@ -1,4 +1,5 @@
 ﻿using Code.Gameplay.Common.Collisions;
+using Code.Gameplay.Common.Time;
 using Code.Gameplay.Features.Hero.Factory;
 using Code.Gameplay.Features.Input.Factory;
 using Code.Infrastructure.AssetManagement;
@@ -31,6 +32,7 @@ namespace Code.Infrastructure.Installers
     private void BindGameplayServices()
     {
       Container.Bind<ICollisionRegistry>().To<CollisionRegistry>().AsSingle();
+      Container.Bind<ITimeService>().To<TimeService>().AsSingle();
     }
 
     private void BindGameplayFactories()
