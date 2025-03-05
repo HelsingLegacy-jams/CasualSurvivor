@@ -10,6 +10,8 @@ namespace Code.Gameplay.Features.Input
       Add(systems.Create<InitializeInputSystem>());
       
       Add(systems.Create<InputDestinationProvidingSystem>());
+      
+      Add(systems.Create<CleanupInputSystem>());
     }
   }
 }
