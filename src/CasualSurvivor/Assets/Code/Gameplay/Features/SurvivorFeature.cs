@@ -1,4 +1,5 @@
-﻿using Code.Gameplay.Features.Hero;
+﻿using Code.Gameplay.Features.Cameras;
+using Code.Gameplay.Features.Hero;
 using Code.Gameplay.Features.Input;
 using Code.Infrastructure.Systems;
 using Code.Infrastructure.View;
@@ -13,6 +14,7 @@ namespace Code.Gameplay.Features
       
       Add(systems.Create<InputFeature>());
       Add(systems.Create<HeroFeature>());
+      Add(systems.Create<CameraFeature>());
     }
   }
 }

@@ -1,6 +1,8 @@
 ﻿using Code.Gameplay.Common.Collisions;
 using Code.Gameplay.Common.Physics;
 using Code.Gameplay.Common.Time;
+using Code.Gameplay.Features.Cameras.Factory;
+using Code.Gameplay.Features.Cameras.Service;
 using Code.Gameplay.Features.Hero.Factory;
 using Code.Gameplay.Features.Input.Factory;
 using Code.Gameplay.Features.Input.Service;
@@ -41,8 +43,12 @@ namespace Code.Infrastructure.Installers
     private void BindGameplayFactories()
     {
       Container.Bind<IHeroFactory>().To<HeroFactory>().AsSingle();
+      
       Container.Bind<IInputFactory>().To<InputFactory>().AsSingle();
       Container.Bind<IInputService>().To<InputService>().AsSingle();
+      
+      Container.Bind<ICameraFactory>().To<CameraFactory>().AsSingle();
+      Container.Bind<ICameraProvider>().To<CameraProvider>().AsSingle();
     }
 
     private void BindContexts()

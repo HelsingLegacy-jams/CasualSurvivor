@@ -13,13 +13,20 @@ public static class GameComponentsLookup {
     public const int ViewPath = 2;
     public const int ViewPrefab = 3;
     public const int WorldPosition = 4;
-    public const int Hero = 5;
-    public const int CursorPosition = 6;
-    public const int Input = 7;
-    public const int Interacted = 8;
-    public const int MovingProvided = 9;
+    public const int FocusedCamera = 5;
+    public const int MainCamera = 6;
+    public const int Busy = 7;
+    public const int Hero = 8;
+    public const int CursorPosition = 9;
+    public const int Input = 10;
+    public const int Interacted = 11;
+    public const int MovingProvided = 12;
+    public const int Destination = 13;
+    public const int Direction = 14;
+    public const int MovementAvailable = 15;
+    public const int Moving = 16;
 
-    public const int TotalComponents = 10;
+    public const int TotalComponents = 17;
 
     public static readonly string[] componentNames = {
         "Id",
@@ -27,11 +34,18 @@ public static class GameComponentsLookup {
         "ViewPath",
         "ViewPrefab",
         "WorldPosition",
+        "FocusedCamera",
+        "MainCamera",
+        "Busy",
         "Hero",
         "CursorPosition",
         "Input",
         "Interacted",
-        "MovingProvided"
+        "MovingProvided",
+        "Destination",
+        "Direction",
+        "MovementAvailable",
+        "Moving"
     };
 
     public static readonly System.Type[] componentTypes = {
@@ -40,10 +54,17 @@ public static class GameComponentsLookup {
         typeof(Code.Common.ViewPath),
         typeof(Code.Common.ViewPrefab),
         typeof(Code.Gameplay.Common.WorldPosition),
+        typeof(Code.Gameplay.Features.Cameras.FocusedCamera),
+        typeof(Code.Gameplay.Features.Cameras.MainCamera),
+        typeof(Code.Gameplay.Features.Hero.Busy),
         typeof(Code.Gameplay.Features.Hero.Hero),
         typeof(Code.Gameplay.Features.Input.CursorPosition),
         typeof(Code.Gameplay.Features.Input.Input),
         typeof(Code.Gameplay.Features.Input.Interacted),
-        typeof(Code.Gameplay.Features.Input.MovingProvided)
+        typeof(Code.Gameplay.Features.Input.MovingProvided),
+        typeof(Code.Gameplay.Features.Movement.Destination),
+        typeof(Code.Gameplay.Features.Movement.Direction),
+        typeof(Code.Gameplay.Features.Movement.MovementAvailable),
+        typeof(Code.Gameplay.Features.Movement.Moving)
     };
 }
